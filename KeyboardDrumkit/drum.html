@@ -68,9 +68,7 @@
   <script>
 
     function playSound(e){
-      //ES6 requires backticks!!!
       const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-      //console.log(e);
       const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
       if(!audio) return; //Deals with keys not being used
       audio.currentTime = 0; //Rewind audio to start for continuous sound
@@ -80,8 +78,6 @@
     }
 
     function removeTransition(e) {
-      //console.log(e);
-      //console.log(this);
       if(e.propertyName !== 'transform') return;
       this.classList.remove('playing');
     }
